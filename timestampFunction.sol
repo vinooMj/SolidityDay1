@@ -6,3 +6,12 @@ contract Time{
         uint256 t = block.timestamp;
     }
 }
+
+
+// using now
+
+contract Time{
+
+function t() public returns(uint256){
+return now;
+}
