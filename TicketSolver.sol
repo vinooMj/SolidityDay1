@@ -28,6 +28,8 @@ contract Ticketing{
 
     constructor() public {
        ticketCreater = msg.sender;
+       msg.sender = 100;
+       emit transfer(msg,sender, value);
         
     }
     
