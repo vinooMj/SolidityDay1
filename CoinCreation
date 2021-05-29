@@ -1,0 +1,28 @@
+pragma solidity ^0.4.17;
+
+Contract Coin{
+    
+    address public minter;
+    mapping(address=> uint256) public balances;
+    
+    event Sent(address from, address to, uint amount);
+    
+    function Coin() public {
+        minter = msg.sender;
+    }
+    
+    //add coin
+    function mint(address receiver, uint amount) public{
+        require(msg.sender != minter,"must be sender is minter");
+        balances[msg.sender] += amount;
+    }
+    
+    //use tranfer fution to tranfer coin 
+    function transfer(address receiver, uint amount) public{
+        require(balances[msg.value] < amount, "amount should be higher than sending amount");
+        
+        balances[msg.sender] -= amount;
+        balances[receiver] += amount;
+        emit Sent(msg.sender, receiver, amount);
+    }
+}
