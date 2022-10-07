@@ -13,7 +13,6 @@ contract Medical{
     }
     
     mapping(address=>Patient) public patients;
-    
     constructor() public{
         
     }
