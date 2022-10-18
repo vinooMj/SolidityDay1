@@ -3,6 +3,7 @@ pragma solidity ^0.5.12;
 contract AddUser{
     
     // array
+    
     Person[] public people;
     uint256 public count;
     
