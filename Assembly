@@ -6,6 +6,6 @@ contract Assembly {
          let sum := add(a, b)
          mstore(mload(0x40), sum)
          
-    }
+   }
 }
 }
